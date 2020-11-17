@@ -1,0 +1,28 @@
+downloader:
+  download_dir: downloads
+
+sensor:
+  - platform: systemmonitor
+    resources:
+      - type: disk_use_percent
+        arg: /home
+      - type: memory_free
+
+lovelace:
+  mode: yaml
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+switch: !include config/switch.yaml
+light: !include config/light.yaml
+automation: !include config/automation.yaml
+shell_command: !include config/shell_command.yaml
+group: !include groups.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+

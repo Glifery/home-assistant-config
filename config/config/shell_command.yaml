@@ -1,0 +1,1 @@
+  megad_trigger_refresh: '/config/bin/megad_trigger_refresh.sh {{ megad_id }} {{ channel_id }} {{ mode }}'

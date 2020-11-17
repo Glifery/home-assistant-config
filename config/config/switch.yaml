@@ -1,0 +1,147 @@
+  - platform: command_line
+    scan_interval: 1
+    switches:
+      megad1_p7:
+        friendly_name: Лента в прихожей
+        command_on: "/config/bin/megad_trigger_refresh.sh 1 7 1"
+        command_off: "/config/bin/megad_trigger_refresh.sh 1 7 0"
+        command_state: "cat '/config/downloads/megad1.txt'"
+        value_template: '{{ value.split(";")[7] == "ON" }}'
+      megad1_p8:
+        friendly_name: Лента над плитой
+        command_on: "/config/bin/megad_trigger_refresh.sh 1 8 1"
+        command_off: "/config/bin/megad_trigger_refresh.sh 1 8 0"
+        command_state: "cat '/config/downloads/megad1.txt'"
+        value_template: '{{ value.split(";")[8] == "ON" }}'
+      megad1_p9:
+        friendly_name: Лента в гостиной
+        command_on: "/config/bin/megad_trigger_refresh.sh 1 9 1"
+        command_off: "/config/bin/megad_trigger_refresh.sh 1 9 0"
+        command_state: "cat '/config/downloads/megad1.txt'"
+        value_template: '{{ value.split(";")[9] == "ON" }}'
+      megad1_p10:
+        friendly_name: Кухня возле плиты
+        command_on: "/config/bin/megad_trigger_refresh.sh 1 10 1"
+        command_off: "/config/bin/megad_trigger_refresh.sh 1 10 0"
+        command_state: "cat '/config/downloads/megad1.txt'"
+        value_template: '{{ value.split(";")[10] == "ON" }}'
+      megad1_p12:
+        friendly_name: Кухня возле холодильника
+        command_on: "/config/bin/megad_trigger_refresh.sh 1 12 1"
+        command_off: "/config/bin/megad_trigger_refresh.sh 1 12 0"
+        command_state: "cat '/config/downloads/megad1.txt'"
+        value_template: '{{ value.split(";")[12] == "ON" }}'
+      megad1_p13:
+        friendly_name: Коридор к санузлу
+        command_on: "/config/bin/megad_trigger_refresh.sh 1 13 1"
+        command_off: "/config/bin/megad_trigger_refresh.sh 1 13 0"
+        command_state: "cat '/config/downloads/megad1.txt'"
+        value_template: '{{ value.split(";")[13] == "ON" }}'
+#      megad1_p22:
+#        friendly_name: Бра в гостиной
+#        command_on: "/config/bin/megad_trigger_refresh.sh 1 22 1"
+#        command_off: "/config/bin/megad_trigger_refresh.sh 1 22 0"
+#        command_state: "cat '/config/downloads/megad1.txt'"
+#        value_template: '{{ value.split(";")[22] == "ON" }}'
+      megad1_p23:
+        friendly_name: Лента над холодильником
+        command_on: "/config/bin/megad_trigger_refresh.sh 1 23 1"
+        command_off: "/config/bin/megad_trigger_refresh.sh 1 23 0"
+        command_state: "cat '/config/downloads/megad1.txt'"
+        value_template: '{{ value.split(";")[23] == "ON" }}'
+#      megad1_p24:
+#        friendly_name: Бра над входной дверью
+#        command_on: "/config/bin/megad_trigger_refresh.sh 1 24 1"
+#        command_off: "/config/bin/megad_trigger_refresh.sh 1 24 0"
+#        command_state: "cat '/config/downloads/megad1.txt'"
+#        value_template: '{{ value.split(";")[24] == "ON" }}'
+      megad1_p25:
+        friendly_name: Прихожая
+        command_on: "/config/bin/megad_trigger_refresh.sh 1 25 1"
+        command_off: "/config/bin/megad_trigger_refresh.sh 1 25 0"
+        command_state: "cat '/config/downloads/megad1.txt'"
+        value_template: '{{ value.split(";")[25] == "ON" }}'
+      megad1_p27:
+        friendly_name: Трековый светильник в гостиной
+        command_on: "/config/bin/megad_trigger_refresh.sh 1 27 1"
+        command_off: "/config/bin/megad_trigger_refresh.sh 1 27 0"
+        command_state: "cat '/config/downloads/megad1.txt'"
+        value_template: '{{ value.split(";")[27] == "ON" }}'
+      megad1_p28:
+        friendly_name: Обеденный стол
+        command_on: "/config/bin/megad_trigger_refresh.sh 1 28 1"
+        command_off: "/config/bin/megad_trigger_refresh.sh 1 28 0"
+        command_state: "cat '/config/downloads/megad1.txt'"
+        value_template: '{{ value.split(";")[28] == "ON" }}'
+      megad2_p7:
+        friendly_name: Лента в санузле
+        command_on: "/config/bin/megad_trigger_refresh.sh 2 7 1"
+        command_off: "/config/bin/megad_trigger_refresh.sh 2 7 0"
+        command_state: "cat '/config/downloads/megad2.txt'"
+        value_template: '{{ value.split(";")[7] == "ON" }}'
+#      megad2_p8:
+#        friendly_name: Бра в лоджии
+#        command_on: "/config/bin/megad_trigger_refresh.sh 2 8 1"
+#        command_off: "/config/bin/megad_trigger_refresh.sh 2 8 0"
+#        command_state: "cat '/config/downloads/megad2.txt'"
+#        value_template: '{{ value.split(";")[8] == "ON" }}'
+#      megad2_p9:
+#        friendly_name: Лента в спальне
+#        command_on: "/config/bin/megad_trigger_refresh.sh 2 9 1"
+#        command_off: "/config/bin/megad_trigger_refresh.sh 2 9 0"
+#        command_state: "cat '/config/downloads/megad2.txt'"
+#        value_template: '{{ value.split(";")[9] == "ON" }}'
+      megad2_p10:
+        friendly_name: Кабинет
+        command_on: "/config/bin/megad_trigger_refresh.sh 2 10 1"
+        command_off: "/config/bin/megad_trigger_refresh.sh 2 10 0"
+        command_state: "cat '/config/downloads/megad2.txt'"
+        value_template: '{{ value.split(";")[10] == "ON" }}'
+      megad2_p12:
+        friendly_name: Лоджия
+        command_on: "/config/bin/megad_trigger_refresh.sh 2 12 1"
+        command_off: "/config/bin/megad_trigger_refresh.sh 2 12 0"
+        command_state: "cat '/config/downloads/megad2.txt'"
+        value_template: '{{ value.split(";")[12] == "ON" }}'
+      megad2_p13:
+        friendly_name: Санузел верхний свет
+        command_on: "/config/bin/megad_trigger_refresh.sh 2 13 1"
+        command_off: "/config/bin/megad_trigger_refresh.sh 2 13 0"
+        command_state: "cat '/config/downloads/megad2.txt'"
+        value_template: '{{ value.split(";")[13] == "ON" }}'
+      megad2_p22:
+        friendly_name: Гардеробная
+        command_on: "/config/bin/megad_trigger_refresh.sh 2 22 1"
+        command_off: "/config/bin/megad_trigger_refresh.sh 2 22 0"
+        command_state: "cat '/config/downloads/megad2.txt'"
+        value_template: '{{ value.split(";")[22] == "ON" }}'
+#      megad2_p23:
+#        friendly_name: Лента в кабинете
+#        command_on: "/config/bin/megad_trigger_refresh.sh 2 23 1"
+#        command_off: "/config/bin/megad_trigger_refresh.sh 2 23 0"
+#        command_state: "cat '/config/downloads/megad2.txt'"
+#        value_template: '{{ value.split(";")[23] == "ON" }}'
+      megad2_p24:
+        friendly_name: Вентилятор в санузле
+        command_on: "/config/bin/megad_trigger_refresh.sh 2 24 1"
+        command_off: "/config/bin/megad_trigger_refresh.sh 2 24 0"
+        command_state: "cat '/config/downloads/megad2.txt'"
+        value_template: '{{ value.split(";")[24] == "ON" }}'
+      megad2_p25:
+        friendly_name: Спальня над кроватью
+        command_on: "/config/bin/megad_trigger_refresh.sh 2 25 1"
+        command_off: "/config/bin/megad_trigger_refresh.sh 2 25 0"
+        command_state: "cat '/config/downloads/megad2.txt'"
+        value_template: '{{ value.split(";")[25] == "ON" }}'
+      megad2_p27:
+        friendly_name: Спальня у окна
+        command_on: "/config/bin/megad_trigger_refresh.sh 2 27 1"
+        command_off: "/config/bin/megad_trigger_refresh.sh 2 27 0"
+        command_state: "cat '/config/downloads/megad2.txt'"
+        value_template: '{{ value.split(";")[27] == "ON" }}'
+#      megad2_p28:
+#        friendly_name: Бра в спальне
+#        command_on: "/config/bin/megad_trigger_refresh.sh 2 28 1"
+#        command_off: "/config/bin/megad_trigger_refresh.sh 2 28 0"
+#        command_state: "cat '/config/downloads/megad2.txt'"
+#        value_template: '{{ value.split(";")[28] == "ON" }}'

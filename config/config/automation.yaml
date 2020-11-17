@@ -1,0 +1,40 @@
+  - alias: megad_refresh
+    trigger:
+      - platform: time_pattern
+        seconds: "/20"
+      - platform: event
+        event_type: megad_refresh
+    action:
+      - service: downloader.download_file
+        data_template:
+          url: "http://192.168.0.141/sec/?cmd=all"
+          filename: "megad1.txt"
+          overwrite: "true"
+      - service: downloader.download_file
+        data_template:
+          url: "http://192.168.0.142/sec/?cmd=all"
+          filename: "megad2.txt"
+          overwrite: "true"
+  - alias: door_sensor_on
+    trigger:
+      platform: state
+      entity_id: binary_sensor.door_window_sensor_158d00044d56f1
+      from: 'off'
+      to: 'on'
+    action:
+      service: light.turn_on
+      data:
+        entity_id:
+          - light.megad1_p7
+          - light.megad1_p25
+#  - alias: door_sensor_off
+#    trigger:
+#      platform: state
+#      entity_id: binary_sensor.door_window_sensor_158d00044d56f1
+#      from: 'on'
+#      to: 'off'
+#    action:
+#      service: light.turn_off
+#      data:
+#        entity_id:
+#          - light.megad1_p25
