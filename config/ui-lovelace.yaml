@@ -16,6 +16,12 @@ views:
         entity: sensor.humidity_158d00049dbfda
         name: Влажность в санузле
       - type: sensor
+        entity: sensor.temperature_158d00049dc2ee
+        name: Температура в спальне
+      - type: sensor
+        entity: sensor.humidity_158d00049dc2ee
+        name: Влажность в спальне
+      - type: sensor
         entity: sensor.temperature_158d00049fe048
         name: Температура на улице
       - type: sensor
@@ -368,14 +374,6 @@ views:
         - type: horizontal-stack
           cards:
            - type: gauge
-             name: Загрузка CPU
-             unit: '%'
-             entity: sensor.processor_use
-             severity:
-                green: 0
-                yellow: 60
-                red: 85
-           - type: gauge
              name: Загрузка ОЗУ
              unit: '%'
              entity: sensor.memory_use_percent
@@ -383,8 +381,6 @@ views:
                 green: 0
                 yellow: 60
                 red: 85
-        - type: horizontal-stack
-          cards:
            - type: gauge
              name: Диск заполнен
              unit: '%'
@@ -393,15 +389,40 @@ views:
                 green: 0
                 yellow: 60
                 red: 85
-           - type: gauge
-             name: Свободное место
-             unit: 'Гб'
-             entity: sensor.disk_free
-             severity:
-                red: 2
-                yellow: 6
-                green: 8
-        - type: history-graph
+        - type: horizontal-stack
+          cards:
+           - type: media-control
+             entity: media_player.google_home
+           - type: entities
+             entities:
+               - entity: input_text.tts_syntesiser
+               - entity: media_player.google_home
+        - type: horizontal-stack
+          cards:
+           - type: entity-button
+             entity: media_player.google_home
+             show_icon: true
+             show_name: true
+             tap_action:
+               action: call-service
+               service: tts.google_translate_say
+               service_data:
+                 entity_id: media_player.google_home
+                 message: "{{ states('input_text.tts_syntesiser') }}"
+           - type: entity-button
+             entity: media_player.google_home
+             hold_action:
+               action: none
+             show_icon: true
+             show_name: true
+             tap_action:
+               action: call-service
+               service: tts.google_translate_say
+               service_data:
+                 entity_id: media_player.google_home
+                 message: My message
+
+
           entities:
            - entity: sensor.maria_db_size
              name: Maria DB

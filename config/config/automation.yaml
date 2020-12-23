@@ -38,3 +38,31 @@
 #      data:
 #        entity_id:
 #          - light.megad1_p25
+  - alias: slack_notification
+    trigger:
+      - platform: state
+        entity_id: sensor.amber_poslednee_uvedomlenie
+    condition:
+      condition: state
+      entity_id: sensor.amber_poslednee_uvedomlenie
+      attribute: package
+#      state: org.telegram.messenger
+      state: org.Slack
+    action:
+      service: tts.google_translate_say
+      entity_id: media_player.google_home
+      data_template:
+        message: "Message from {{state_attr('sensor.amber_poslednee_uvedomlenie', 'android.title')}}: {{states('sensor.amber_poslednee_uvedomlenie')}}"
+#        message: "{{states('sensor.amber_poslednee_uvedomlenie')}}"
+#        language: 'ru'
+        language: 'en'
+  - alias: say_from_text
+    trigger:
+      - platform: state
+        entity_id: input_text.tts_syntesiser
+    action:
+      service: tts.google_translate_say
+      entity_id: media_player.google_home
+      data_template:
+        message: "{{states('input_text.tts_syntesiser')}}"
+        language: 'ru'

@@ -5,8 +5,7 @@ sensor:
   - platform: systemmonitor
     resources:
       - type: disk_use_percent
-        arg: /home
-      - type: memory_free
+      - type: memory_use_percent
 
 lovelace:
   mode: yaml
@@ -17,6 +16,10 @@ default_config:
 # Text to speech
 tts:
   - platform: google_translate
+
+input_text:
+  tts_syntesiser:
+    name: TTS2Google
 
 switch: !include config/switch.yaml
 light: !include config/light.yaml
