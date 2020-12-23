@@ -19,7 +19,7 @@ tts:
 
 input_text:
   tts_syntesiser:
-    name: TTS2Google
+    name: Сказать
 
 switch: !include config/switch.yaml
 light: !include config/light.yaml
