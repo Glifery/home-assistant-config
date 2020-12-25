@@ -6,6 +6,10 @@ sensor:
     resources:
       - type: disk_use_percent
       - type: memory_use_percent
+  - platform: mqtt
+    name: Bridge state
+    state_topic: "zigbee2mqtt/bridge/state"
+    icon: mdi:router-wireless
 
 lovelace:
   mode: yaml
@@ -13,19 +17,23 @@ lovelace:
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
+# Mosquitto addon https://www.youtube.com/watch?v=9InA6kc6r9s
+mqtt:
+  broker: core-mosquitto
+  discovery: true
+  discovery_prefix: homeassistant
+  username: mqtt
+  password: mqtt
+
 # Text to speech
 tts:
   - platform: google_translate
 
-input_text:
-  tts_syntesiser:
-    name: Сказать
-
+timer: !include config/timer.yaml
+input_boolean: !include config/input_boolean.yaml
 switch: !include config/switch.yaml
 light: !include config/light.yaml
 automation: !include config/automation.yaml
 shell_command: !include config/shell_command.yaml
-group: !include groups.yaml
-script: !include scripts.yaml
-scene: !include scenes.yaml
+input_text: !include config/input_text.yaml
 

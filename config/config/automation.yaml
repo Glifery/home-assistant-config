@@ -27,17 +27,6 @@
         entity_id:
           - light.megad1_p7
           - light.megad1_p25
-#  - alias: door_sensor_off
-#    trigger:
-#      platform: state
-#      entity_id: binary_sensor.door_window_sensor_158d00044d56f1
-#      from: 'on'
-#      to: 'off'
-#    action:
-#      service: light.turn_off
-#      data:
-#        entity_id:
-#          - light.megad1_p25
   - alias: slack_notification
     trigger:
       - platform: state
@@ -53,8 +42,6 @@
       entity_id: media_player.google_home
       data_template:
         message: "Message from {{state_attr('sensor.amber_poslednee_uvedomlenie', 'android.title')}}: {{states('sensor.amber_poslednee_uvedomlenie')}}"
-#        message: "{{states('sensor.amber_poslednee_uvedomlenie')}}"
-#        language: 'ru'
         language: 'en'
   - alias: say_from_text
     trigger:
@@ -66,3 +53,52 @@
       data_template:
         message: "{{states('input_text.tts_syntesiser')}}"
         language: 'ru'
+
+  - id: Включить добавление Zigbee
+    alias: enable_zigbee_join
+    initial_state: true
+    trigger:
+      platform: state
+      entity_id: input_boolean.zigbee_permit_join
+      to: 'on'
+    action:
+    - service: mqtt.publish
+      data:
+        topic: zigbee2mqtt/bridge/config/permit_join
+        payload: 'true'
+    - service: timer.start
+      data:
+        entity_id: timer.zigbee_permit_join
+
+  - id: Выключить добавление Zigbee
+    alias: disable_zigbee_join
+    initial_state: true
+    trigger:
+    - entity_id: input_boolean.zigbee_permit_join
+      platform: state
+      to: 'off'
+    action:
+    - service: mqtt.publish
+      data:
+        topic: zigbee2mqtt/bridge/config/permit_join
+        payload: 'false'
+    - service: timer.cancel
+      data:
+        entity_id: timer.zigbee_permit_join
+
+  - id: Выключение по таймеру добавления Zigbee
+    alias: disable_zigbee_join_timer
+    initial_state: true
+    trigger:
+    - platform: event
+      event_type: timer.finished
+      event_data:
+        entity_id: timer.zigbee_permit_join
+    action:
+    - service: mqtt.publish
+      data:
+        topic: zigbee2mqtt/bridge/config/permit_join
+        payload: 'false'
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.zigbee_permit_join

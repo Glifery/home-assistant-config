@@ -5,11 +5,13 @@ views:
   cards:
   - type: glance
     title: Климат
-    columns: 4
+    columns: 5
     entities:
     - entity: sensor.temperature_158d000465830c
       name: Гостиная
       icon: mdi:thermometer
+    - entity: sensor.0x04cf8cdf3c8033c1_power
+      name: Конвектор
     - entity: sensor.temperature_158d00049dbfda
       name: Санузел
       icon: mdi:thermometer
@@ -22,6 +24,8 @@ views:
     - entity: sensor.humidity_158d000465830c
       name: ""
       icon: mdi:water-percent
+    - entity: sensor.0x04cf8cdf3c8033c1_energy
+      name: ""
     - entity: sensor.humidity_158d00049dbfda
       name: ""
       icon: mdi:water-percent
@@ -40,6 +44,8 @@ views:
       name: Санузел
     - entity: sensor.temperature_158d00049dc2ee
       name: Спальня
+    - entity: sensor.0x04cf8cdf3c8033c1_power
+      name: Конвектор
     - entity: sensor.humidity_158d000465830c
       name: Гостиная
     - entity: sensor.humidity_158d00049dbfda
@@ -152,6 +158,10 @@ views:
       icon: mdi:television-ambient-light
     - entity: light.megad2_p12
       icon: mdi:wall-sconce-round
+    - entity: switch.0x04cf8cdf3c8033c1
+      name: Конвектор
+    - entity: light.xiaomi_gateway_light
+      name: Xiaomi Gateway
 #        - entity: light.megad2_p8
 #          icon: mdi:coach-lamp
 
@@ -198,3 +208,31 @@ views:
   cards:
   - type: weather-forecast
     entity: weather.home_assistant
+
+- title: СС 2531
+  icon: mdi:usb-flash-drive
+  cards:
+  - type: vertical-stack
+    cards:
+    - type: markdown
+      content: >
+         **Добавление устройств**
+    - type: entities
+      title: Добавление Zigbee устройств
+      show_header_toggle: false
+      entities:
+      - entity: input_boolean.zigbee_permit_join
+      - entity: timer.zigbee_permit_join
+      - entity: sensor.bridge_state
+  - type: vertical-stack
+    cards:
+    - type: markdown
+      content: >
+         **Zigbee**
+    - type: entities
+      title: Розетка
+      show_header_toggle: false
+      entities:
+      - entity: switch.0x04cf8cdf3c8033c1
+      - entity: sensor.0x04cf8cdf3c8033c1_power
+      - entity: sensor.0x04cf8cdf3c8033c1_energy
