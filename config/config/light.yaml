@@ -105,17 +105,21 @@
             megad_id: 1
             channel_id: 13
             mode: 0
-#      megad1_p22:
-#        friendly_name: Бра в гостиной
-#        value_template: "{{ is_state('switch.megad1_p22', 'on') }}"
-#        turn_on:
-#        - service: shell_command.megad_trigger_refresh
-#          data:
-#            entity_id: switch.megad1_p22
-#        turn_off:
-#        - service: shell_command.megad_trigger_refresh
-#          data:
-#            entity_id: switch.megad1_p22
+      megad1_p22:
+        friendly_name: Бра в гостиной
+        value_template: "{{ is_state('switch.megad1_p22', 'on') }}"
+        turn_on:
+        - service: shell_command.megad_trigger_refresh
+          data_template:
+            megad_id: 1
+            channel_id: 22
+            mode: 1
+        turn_off:
+        - service: shell_command.megad_trigger_refresh
+          data_template:
+            megad_id: 1
+            channel_id: 22
+            mode: 0
       megad1_p23:
         friendly_name: Лента над холодильником
         value_template: "{{ is_state('switch.megad1_p23', 'on') }}"
@@ -213,17 +217,21 @@
 #        - service: shell_command.megad_trigger_refresh
 #          data:
 #            entity_id: switch.megad2_p8
-#      megad2_p9:
-#        friendly_name: Лента в спальне
-#        value_template: "{{ is_state('switch.megad2_p9', 'on') }}"
-#        turn_on:
-#        - service: shell_command.megad_trigger_refresh
-#          data:
-#            entity_id: switch.megad2_p9
-#        turn_off:
-#        - service: shell_command.megad_trigger_refresh
-#          data:
-#            entity_id: switch.megad2_p9
+      megad2_p9:
+        friendly_name: Лента в спальне
+        value_template: "{{ is_state('switch.megad2_p9', 'on') }}"
+        turn_on:
+        - service: shell_command.megad_trigger_refresh
+          data_template:
+            megad_id: 2
+            channel_id: 9
+            mode: 1
+        turn_off:
+        - service: shell_command.megad_trigger_refresh
+          data_template:
+            megad_id: 2
+            channel_id: 9
+            mode: 0
       megad2_p10:
         friendly_name: Кабинет
         value_template: "{{ is_state('switch.megad2_p10', 'on') }}"
@@ -340,14 +348,18 @@
             megad_id: 2
             channel_id: 27
             mode: 0
-#      megad2_p28:
-#        friendly_name: Бра в спальне
-#        value_template: "{{ is_state('switch.megad2_p28', 'on') }}"
-#        turn_on:
-#        - service: shell_command.megad_trigger_refresh
-#          data:
-#            entity_id: switch.megad2_p28
-#        turn_off:
-#        - service: shell_command.megad_trigger_refresh
-#          data:
-#            entity_id: switch.megad2_p28
+      megad2_p28:
+        friendly_name: Бра в спальне
+        value_template: "{{ is_state('switch.megad2_p28', 'on') }}"
+        turn_on:
+        - service: shell_command.megad_trigger_refresh
+          data_template:
+            megad_id: 2
+            channel_id: 28
+            mode: 1
+        turn_off:
+        - service: shell_command.megad_trigger_refresh
+          data_template:
+            megad_id: 2
+            channel_id: 28
+            mode: 0

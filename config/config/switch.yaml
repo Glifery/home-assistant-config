@@ -37,12 +37,12 @@
         command_off: "/config/bin/megad_trigger_refresh.sh 1 13 0"
         command_state: "cat '/config/downloads/megad1.txt'"
         value_template: '{{ value.split(";")[13] == "ON" }}'
-#      megad1_p22:
-#        friendly_name: Бра в гостиной
-#        command_on: "/config/bin/megad_trigger_refresh.sh 1 22 1"
-#        command_off: "/config/bin/megad_trigger_refresh.sh 1 22 0"
-#        command_state: "cat '/config/downloads/megad1.txt'"
-#        value_template: '{{ value.split(";")[22] == "ON" }}'
+      megad1_p22:
+        friendly_name: Бра в гостиной
+        command_on: "/config/bin/megad_trigger_refresh.sh 1 22 1"
+        command_off: "/config/bin/megad_trigger_refresh.sh 1 22 0"
+        command_state: "cat '/config/downloads/megad1.txt'"
+        value_template: '{{ value.split(";")[22] == "ON" }}'
       megad1_p23:
         friendly_name: Лента над холодильником
         command_on: "/config/bin/megad_trigger_refresh.sh 1 23 1"
@@ -85,12 +85,12 @@
 #        command_off: "/config/bin/megad_trigger_refresh.sh 2 8 0"
 #        command_state: "cat '/config/downloads/megad2.txt'"
 #        value_template: '{{ value.split(";")[8] == "ON" }}'
-#      megad2_p9:
-#        friendly_name: Лента в спальне
-#        command_on: "/config/bin/megad_trigger_refresh.sh 2 9 1"
-#        command_off: "/config/bin/megad_trigger_refresh.sh 2 9 0"
-#        command_state: "cat '/config/downloads/megad2.txt'"
-#        value_template: '{{ value.split(";")[9] == "ON" }}'
+      megad2_p9:
+        friendly_name: Лента в спальне
+        command_on: "/config/bin/megad_trigger_refresh.sh 2 9 1"
+        command_off: "/config/bin/megad_trigger_refresh.sh 2 9 0"
+        command_state: "cat '/config/downloads/megad2.txt'"
+        value_template: '{{ value.split(";")[9] == "ON" }}'
       megad2_p10:
         friendly_name: Кабинет
         command_on: "/config/bin/megad_trigger_refresh.sh 2 10 1"
@@ -139,9 +139,9 @@
         command_off: "/config/bin/megad_trigger_refresh.sh 2 27 0"
         command_state: "cat '/config/downloads/megad2.txt'"
         value_template: '{{ value.split(";")[27] == "ON" }}'
-#      megad2_p28:
-#        friendly_name: Бра в спальне
-#        command_on: "/config/bin/megad_trigger_refresh.sh 2 28 1"
-#        command_off: "/config/bin/megad_trigger_refresh.sh 2 28 0"
-#        command_state: "cat '/config/downloads/megad2.txt'"
-#        value_template: '{{ value.split(";")[28] == "ON" }}'
+      megad2_p28:
+        friendly_name: Бра в спальне
+        command_on: "/config/bin/megad_trigger_refresh.sh 2 28 1"
+        command_off: "/config/bin/megad_trigger_refresh.sh 2 28 0"
+        command_state: "cat '/config/downloads/megad2.txt'"
+        value_template: '{{ value.split(";")[28] == "ON" }}'

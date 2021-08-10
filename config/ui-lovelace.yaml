@@ -82,6 +82,9 @@ views:
       - light.megad2_p26
       - light.megad2_p27
 #          - light.megad2_p28
+      - entity: light.yeelight_bslamp2_0x000000001263baec
+        name: Лампа
+        icon: mdi:lamp
     state_filter:
       - "on"
 
@@ -94,8 +97,8 @@ views:
   - type: entities
     title: Прихожая
     entities:
-#        - entity: switch.megad1_p24
-#          icon: mdi:outdoor-lamp
+#    - entity: switch.megad1_p24
+#      icon: mdi:outdoor-lamp
     - entity: light.megad1_p25
       icon: mdi:wall-sconce-round
     - entity: light.megad1_p7
@@ -120,10 +123,13 @@ views:
       icon: mdi:track-light
     - entity: light.megad1_p9
       icon: mdi:led-strip-variant
-#        - entity: light.megad1_p22
-#          icon: mdi:coach-lamp
+    - entity: light.megad1_p22
+      icon: mdi:coach-lamp
     - entity: light.megad1_p28
       icon: mdi:globe-light
+    - entity: light.yeelight_bslamp2_0x000000001263baec
+      name: Лампа
+      icon: mdi:lamp
   - type: entities
     title: Санузел
     entities:
@@ -145,10 +151,10 @@ views:
     entities:
     - entity: light.megad2_p25
       icon: mdi:wall-sconce-round
-#        - entity: light.megad2_p9
-#          icon: mdi:led-strip-variant
-#        - entity: light.megad2_p28
-#          icon: mdi:coach-lamp
+    - entity: light.megad2_p9
+      icon: mdi:led-strip-variant
+    - entity: light.megad2_p28
+      icon: mdi:coach-lamp
     - entity: light.megad2_p27
       icon: mdi:wall-sconce-round
   - type: entities
