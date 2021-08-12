@@ -135,6 +135,17 @@
     action:
     - service: shell_command.megad_off_all
 
+  - id: Выключение света по выключателю в спальне
+    alias: master_badroom_switch
+    trigger:
+    - platform: event
+      event_type: xiaomi_aqara.click
+      event_data:
+        entity_id: binary_sensor.switch_158d0005cf9576
+        click_type: single
+    action:
+    - service: shell_command.megad_off_except_badroom
+
   - id: Включение света в гардеробе по датчику движения
     alias: motion_on
     trigger:

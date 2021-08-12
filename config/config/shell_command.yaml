@@ -1,2 +1,3 @@
   megad_trigger_refresh: '/config/bin/megad_trigger_refresh.sh {{ megad_id }} {{ channel_id }} {{ mode }}'
   megad_off_all: '/config/bin/megad_off_all.sh'
+  megad_off_except_badroom: '/config/bin/megad_off_except_badroom.sh'
