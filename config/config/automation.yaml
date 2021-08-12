@@ -123,3 +123,40 @@
       data:
         entity_id:
           - light.megad2_p13
+
+  - id: Выключение света по мастер выключателю
+    alias: master_switch
+    trigger:
+    - platform: event
+      event_type: xiaomi_aqara.click
+      event_data:
+        entity_id: binary_sensor.switch_158d0005cfac92
+        click_type: single
+    action:
+    - service: shell_command.megad_off_all
+
+  - id: Включение света в гардеробе по датчику движения
+    alias: motion_on
+    trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_sensor_158d000632d88c
+      from: 'off'
+      to: 'on'
+    action:
+    - service: light.turn_on
+      data:
+        entity_id:
+          - light.megad2_p22
+
+  - id: Выключение света в гардеробе по датчику движения
+    alias: motion_off
+    trigger:
+    - platform: state
+      entity_id: binary_sensor.motion_sensor_158d000632d88c
+      from: 'on'
+      to: 'off'
+    action:
+    - service: light.turn_off
+      data:
+        entity_id:
+          - light.megad2_p22
