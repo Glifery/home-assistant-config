@@ -35,6 +35,9 @@ views:
     - entity: sensor.humidity_158d00049fe048
       name: ""
       icon: mdi:water-percent
+  - type: thermostat
+    name: Кондиционер
+    entity: climate.c679b311
   - type: history-graph
     hours_to_show: 48
     entities:
@@ -176,6 +179,24 @@ views:
   cards:
   - type: vertical-stack
     cards:
+    - type: history-graph
+      title: Освещенность в гостиной
+      hours_to_show: 24
+      entities:
+      - entity: sensor.0x54ef4410000a2a8c_illuminance_lux
+        name: Освещенность в гостиной
+    - type: history-graph
+      title: Входная дверь
+      hours_to_show: 24
+      entities:
+      - entity: binary_sensor.door_window_sensor_158d00044d56f1
+        name: Входная дверь
+    - type: history-graph
+      title: Датчик движения в гардеробной
+      hours_to_show: 24
+      entities:
+      - entity: binary_sensor.motion_sensor_158d000632d88c
+        name: Датчик движения в гардеробной
     - type: markdown
       content: >
         **Прочее**
@@ -202,12 +223,7 @@ views:
       - type: entities
         entities:
         - entity: input_text.tts_syntesiser
-    - type: history-graph
-      title: Входная дверь
-      hours_to_show: 24
-      entities:
-      - entity: binary_sensor.door_window_sensor_158d00044d56f1
-        name: Входная дверь
+
 
 - title: Погода
   icon: mdi:weather-partly-snowy-rainy

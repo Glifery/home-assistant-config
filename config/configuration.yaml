@@ -36,6 +36,7 @@ light: !include config/light.yaml
 automation: !include config/automation.yaml
 shell_command: !include config/shell_command.yaml
 input_text: !include config/input_text.yaml
+climate: !include config/climate.yaml
 
 yeelight:
   devices:

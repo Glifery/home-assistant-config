@@ -146,7 +146,7 @@
     action:
     - service: shell_command.megad_off_except_badroom
 
-  - id: Включение света в гардеробе по датчику движения
+  - id: Включение света в гардеробной по датчику движения
     alias: motion_on
     trigger:
     - platform: state
@@ -159,7 +159,7 @@
         entity_id:
           - light.megad2_p22
 
-  - id: Выключение света в гардеробе по датчику движения
+  - id: Выключение света в гардеробной по датчику движения
     alias: motion_off
     trigger:
     - platform: state

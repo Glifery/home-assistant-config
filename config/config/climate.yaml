@@ -1,0 +1,6 @@
+- platform: gree
+  name: First AC
+  host: 192.168.0.42
+  port: 7000
+  mac: '50:2c:c6:79:b3:11'
+  target_temp_step: 1
