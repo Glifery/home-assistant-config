@@ -39,7 +39,7 @@ views:
     name: Кондиционер
     entity: climate.c679b311
   - type: history-graph
-    hours_to_show: 48
+    hours_to_show: 12
     entities:
     - entity: sensor.temperature_158d000465830c
       name: Гостиная
@@ -79,7 +79,7 @@ views:
       - light.megad2_p12
       - light.megad2_p13
       - light.megad2_p22
-#          - light.megad2_p23
+      - light.megad2_p23
       - light.megad2_p24
       - light.megad2_p25
       - light.megad2_p26
@@ -147,8 +147,8 @@ views:
     entities:
     - entity: light.megad2_p10
       icon: mdi:wall-sconce-round
-#        - entity: light.megad2_p23
-#          icon: mdi:led-strip-variant
+    - entity: light.megad2_p23
+      icon: mdi:led-strip-variant
   - type: entities
     title: Спальня
     entities:

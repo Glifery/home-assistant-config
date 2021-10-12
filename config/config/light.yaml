@@ -292,6 +292,21 @@
             megad_id: 2
             channel_id: 22
             mode: 0
+      megad2_p23:
+        friendly_name: Лента в кабинете
+        value_template: "{{ is_state('switch.megad2_p23', 'on') }}"
+        turn_on:
+        - service: shell_command.megad_trigger_refresh
+          data_template:
+            megad_id: 2
+            channel_id: 23
+            mode: 1
+        turn_off:
+        - service: shell_command.megad_trigger_refresh
+          data_template:
+            megad_id: 2
+            channel_id: 23
+            mode: 0
 #      megad2_p23:
 #        friendly_name: Лента в кабинете
 #        value_template: "{{ is_state('switch.megad2_p23', 'on') }}"

@@ -115,12 +115,12 @@
         command_off: "/config/bin/megad_trigger_refresh.sh 2 22 0"
         command_state: "cat '/config/downloads/megad2.txt'"
         value_template: '{{ value.split(";")[22] == "ON" }}'
-#      megad2_p23:
-#        friendly_name: Лента в кабинете
-#        command_on: "/config/bin/megad_trigger_refresh.sh 2 23 1"
-#        command_off: "/config/bin/megad_trigger_refresh.sh 2 23 0"
-#        command_state: "cat '/config/downloads/megad2.txt'"
-#        value_template: '{{ value.split(";")[23] == "ON" }}'
+      megad2_p23:
+        friendly_name: Лента в кабинете
+        command_on: "/config/bin/megad_trigger_refresh.sh 2 23 1"
+        command_off: "/config/bin/megad_trigger_refresh.sh 2 23 0"
+        command_state: "cat '/config/downloads/megad2.txt'"
+        value_template: '{{ value.split(";")[23] == "ON" }}'
       megad2_p24:
         friendly_name: Вентилятор в санузле
         command_on: "/config/bin/megad_trigger_refresh.sh 2 24 1"
