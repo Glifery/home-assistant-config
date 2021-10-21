@@ -1,0 +1,5 @@
+type: weather-forecast
+name: в Минске
+entity: weather.home_assistant
+show_forecast: false
+secondary_info_attribute: humidity

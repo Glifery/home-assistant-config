@@ -1,0 +1,15 @@
+type: glance
+columns: 4
+entities:
+  - entity: sensor.temperature_158d000465830c
+    name: Гостиная
+    icon: mdi:thermometer
+  - entity: sensor.temperature_158d00049dbfda
+    name: Санузел
+    icon: mdi:thermometer
+  - entity: sensor.temperature_158d00049dc2ee
+    name: Спальня
+    icon: mdi:thermometer
+  - entity: sensor.temperature_158d00049fe048
+    name: Улица
+    icon: mdi:thermometer

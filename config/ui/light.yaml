@@ -1,0 +1,79 @@
+title: Освещение
+icon: mdi:lightbulb-group
+cards:
+  - type: entities
+    title: Прихожая
+    entities:
+      #    - entity: switch.megad1_p24
+      #      icon: mdi:outdoor-lamp
+      - entity: light.megad1_p25
+        icon: mdi:wall-sconce-round
+      - entity: light.megad1_p7
+        icon: mdi:led-strip-variant
+      - entity: light.megad1_p13
+        icon: mdi:wall-sconce-round
+  - type: entities
+    title: Кухня
+    entities:
+      - entity: light.megad1_p10
+        icon: mdi:wall-sconce-round
+      - entity: light.megad1_p8
+        icon: mdi:led-strip-variant
+      - entity: light.megad1_p12
+        icon: mdi:wall-sconce-round
+      - entity: light.megad1_p23
+        icon: mdi:led-strip-variant
+  - type: entities
+    title: Гостиная
+    entities:
+      - entity: light.megad1_p27
+        icon: mdi:track-light
+      - entity: light.megad1_p9
+        icon: mdi:led-strip-variant
+      - entity: light.megad1_p22
+        icon: mdi:coach-lamp
+      - entity: light.megad1_p28
+        icon: mdi:globe-light
+      - entity: light.yeelight_bslamp2_0x000000001263baec
+        name: Лампа
+        icon: mdi:lamp
+  - type: entities
+    title: Санузел
+    entities:
+      - entity: light.megad2_p13
+        icon: mdi:wall-sconce-round
+      - entity: light.megad2_p7
+        icon: mdi:led-strip-variant
+      - entity: light.megad2_p24
+        icon: mdi:fan
+  - type: entities
+    title: Кабинет
+    entities:
+      - entity: light.megad2_p10
+        icon: mdi:wall-sconce-round
+      - entity: light.megad2_p23
+        icon: mdi:led-strip-variant
+  - type: entities
+    title: Спальня
+    entities:
+      - entity: light.megad2_p25
+        icon: mdi:wall-sconce-round
+      - entity: light.megad2_p9
+        icon: mdi:led-strip-variant
+      - entity: light.megad2_p28
+        icon: mdi:coach-lamp
+      - entity: light.megad2_p27
+        icon: mdi:wall-sconce-round
+  - type: entities
+    title: Прочее
+    entities:
+      - entity: light.megad2_p22
+        icon: mdi:television-ambient-light
+      - entity: light.megad2_p12
+        icon: mdi:wall-sconce-round
+      - entity: switch.0x04cf8cdf3c8033c1
+        name: Конвектор
+      - entity: light.xiaomi_gateway_light
+        name: Xiaomi Gateway
+#        - entity: light.megad2_p8
+#          icon: mdi:coach-lamp

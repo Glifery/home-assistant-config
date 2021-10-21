@@ -1,0 +1,9 @@
+type: history-graph
+hours_to_show: 12
+entities:
+  - entity: sensor.temperature_158d000465830c
+    name: Гостиная
+  - entity: sensor.temperature_158d00049dbfda
+    name: Санузел
+  - entity: sensor.temperature_158d00049dc2ee
+    name: Спальня
