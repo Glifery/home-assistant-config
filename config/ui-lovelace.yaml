@@ -13,8 +13,8 @@ views:
 
 - !include ui/light.yaml
 
-- title: Прочее
-  icon: mdi:cog
+- title: Мониторинг
+  icon: mdi:chart-box
   cards:
   - type: vertical-stack
     cards:
@@ -64,8 +64,8 @@ views:
         entities:
         - entity: input_text.tts_syntesiser
 
-- title: СС 2531
-  icon: mdi:usb-flash-drive
+- title: Система
+  icon: mdi:cog
   cards:
   - type: vertical-stack
     cards:
@@ -91,3 +91,12 @@ views:
       - entity: switch.0x04cf8cdf3c8033c1
       - entity: sensor.0x04cf8cdf3c8033c1_power
       - entity: sensor.0x04cf8cdf3c8033c1_energy
+  - type: button
+    name: Start Crystal NAS
+    icon: mdi:nas
+    show_name: true
+    show_icon: true
+    show_state: false
+    tap_action:
+      action: call-service
+      service: shell_command.nas_esp_1_switch

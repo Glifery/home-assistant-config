@@ -1,3 +1,7 @@
   megad_trigger_refresh: '/config/bin/megad_trigger_refresh.sh {{ megad_id }} {{ channel_id }} {{ mode }}'
   megad_off_all: '/config/bin/megad_off_all.sh'
   megad_off_except_badroom: '/config/bin/megad_off_except_badroom.sh'
+  megad_on_from_badroom: '/config/bin/megad_on_from_badroom.sh'
+  curtain_esp_1_open: '/config/bin/curtain_esp_1_open.sh'
+  curtain_esp_2_close: '/config/bin/curtain_esp_2_close.sh'
+  nas_esp_1_switch: '/config/bin/nas_esp_1_switch.sh'

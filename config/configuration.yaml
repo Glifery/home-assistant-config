@@ -53,3 +53,11 @@ yeelight:
           - TemperatureTransition: [1900, 1000, 80]
           - TemperatureTransition: [1900, 2000, 60]
           - SleepTransition:       [1000]
+
+logger:
+  default: warning
+  logs:
+    custom_components.gree: debug
+    custom_components.gree.climate: debug
+    homeassistant.components.gree: debug
+    homeassistant.components.greeclimate: debug
